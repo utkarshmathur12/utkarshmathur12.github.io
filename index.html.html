@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Utkarsh Mathur – Computer Science Student & Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F3FA; --surface:#FFFFFF; --ink:#1B1A3A; --muted:#5B5878; --line:#DAD5E8;
+  --rose:#C2185B; --gold:#B7791F; --hero:#1B1A3A; --hero-ink:#F6F3FA; --hero-accent:#F2B134;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#12112A;--surface:#1B1A3A;--ink:#F1EEF8;--muted:#AAA6C8;--line:#34325C;--rose:#FF7AA8;--gold:#F2B134;--hero:#0B0A1E;}
+}
+:root[data-theme="dark"]{--bg:#12112A;--surface:#1B1A3A;--ink:#F1EEF8;--muted:#AAA6C8;--line:#34325C;--rose:#FF7AA8;--gold:#F2B134;--hero:#0B0A1E;}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 "IBM Plex Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.05;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:980px;margin:0 auto;padding:0 24px}
+
+/* hero with jali lattice */
+header.hero{background:var(--hero);color:var(--hero-ink);position:relative;overflow:hidden;padding:28px 0 88px}
+header.hero::before{content:"";position:absolute;inset:0;opacity:.14;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M30 4 56 30 30 56 4 30Z M30 16 44 30 30 44 16 30Z' fill='none' stroke='%23F2B134' stroke-width='1.2'/%3E%3C/svg%3E")}
+header.hero .wrap{position:relative}
+nav{display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:15px}
+nav .links{display:flex;gap:20px;flex-wrap:wrap}
+nav a{text-decoration:none;opacity:.85}nav a:hover{opacity:1;text-decoration:underline}
+#theme{background:none;border:1px solid rgba(246,243,250,.4);color:inherit;border-radius:99px;padding:4px 12px;font:inherit;cursor:pointer}
+.hero h1{font-weight:800;font-size:clamp(3rem,10vw,6.6rem);margin-top:72px;letter-spacing:-.02em}
+.hero .role{font-size:clamp(1.1rem,2.4vw,1.4rem);max-width:34ch;margin:20px 0 32px;color:var(--hero-accent)}
+.hero .intro{max-width:56ch;opacity:.9;margin:0 0 32px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 22px;border-radius:6px;text-decoration:none;font-weight:500;border:1.5px solid var(--hero-accent)}
+.btn.fill{background:var(--hero-accent);color:#1B1A3A}
+.btn.ghost{color:var(--hero-ink)}
+.btn:hover{transform:translateY(-1px)}
+.meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:56px;font-size:15px}
+.meta b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:1.6rem;color:var(--hero-accent);line-height:1.2}
+
+section{padding:72px 0 0}
+h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;margin-bottom:28px;letter-spacing:-.01em}
+.lede{max-width:62ch;color:var(--muted);margin:0}
+
+.projects{display:grid;gap:20px}
+.proj{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--rose);border-radius:4px;padding:28px}
+.proj:nth-child(2){border-left-color:var(--gold)}
+.proj:nth-child(3){border-left-color:var(--ink)}
+.proj h3{font-size:1.6rem;margin-bottom:6px}
+.proj .ctx{color:var(--muted);font-size:15px;margin:0 0 14px}
+.proj ul{margin:0 0 18px;padding-left:20px}
+.proj li{margin-bottom:6px}
+.plink{display:inline-block;margin-top:18px;font-weight:500;color:var(--rose)}
+.tags{display:flex;gap:8px;flex-wrap:wrap;padding:0;margin:0;list-style:none}
+.tags li{border:1px solid var(--line);border-radius:99px;padding:2px 12px;font-size:14px;margin:0}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:0 40px}
+.skill{padding:16px 0;border-top:1px solid var(--line)}
+.skill h3{font-size:1.1rem;margin-bottom:6px}
+.skill p{margin:0;color:var(--muted)}
+
+.timeline{border-left:2px solid var(--line);margin-left:6px}
+.item{position:relative;padding:0 0 32px 28px}
+.item::before{content:"";position:absolute;left:-8px;top:8px;width:14px;height:14px;background:var(--rose);transform:rotate(45deg)}
+.item h3{font-size:1.25rem}
+.item .when{color:var(--muted);font-size:15px;margin:2px 0 8px}
+.item p{margin:0;max-width:62ch}
+
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px}
+.plain{list-style:none;padding:0;margin:0}
+.plain li{padding:10px 0;border-top:1px solid var(--line)}
+.plain small{display:block;color:var(--muted)}
+
+footer{margin-top:96px;background:var(--hero);color:var(--hero-ink);padding:64px 0 48px}
+footer h2{color:var(--hero-ink)}
+footer .contact{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0 40px}
+footer p.small{opacity:.6;font-size:14px;margin:0}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <nav aria-label="Main">
+      <div class="links"><a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#contact">Contact</a></div>
+      <button id="theme" type="button" aria-label="Toggle light and dark theme">Theme</button>
+    </nav>
+    <h1>Utkarsh Mathur</h1>
+    <p class="role">Computer science student building backend systems and AI tools.</p>
+    <p class="intro">I'm a final-year B.Tech student in Jaipur who enjoys data structures, Django backends and practical machine learning. I like turning classroom ideas into things people can use.</p>
+    <div class="btns">
+      <a class="btn fill" href="#projects">See my projects</a>
+      <a class="btn ghost" href="mailto:utkarshmathur220@gmail.com">Email me</a>
+      <a class="btn ghost" href="https://github.com/utkarshmathur12" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/utkarsh-mathur-8968972a1/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="meta">
+      <div><b>8.62</b>CGPA at Poornima University</div>
+      <div><b>130+</b>LeetCode &amp; HackerRank problems</div>
+      <div><b>50+</b>users on EchoClassroom</div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="about">
+    <h2>About</h2>
+    <p class="lede">I'm studying B.Tech in Computer Science at Poornima University (2023–2027). My focus is data structures, backend development and the fundamentals of AI/ML. I've led a hackathon team, built a real-time web app, trained an image-classification model, created my own voice assistant, and completed job simulations with Tata and Deloitte.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <article class="proj">
+        <h3>EchoClassroom</h3>
+        <p class="ctx">Team leader · GDG "Let's Hack It" Hackathon</p>
+        <ul>
+          <li>Built a real-time, anonymous classroom discussion platform.</li>
+          <li>Added secure anonymous posting and live interaction for 50+ users.</li>
+          <li>Led a cross-functional team from idea to demo.</li>
+        </ul>
+        <ul class="tags"><li>React.js</li><li>Firebase</li><li>Leadership</li></ul>
+        <a class="plink" href="https://github.com/Suhani567/Echo_Class-main--2-" target="_blank" rel="noopener">View on GitHub</a>
+      </article>
+      <article class="proj">
+        <h3>AI-Based Mechanical Parts Detector</h3>
+        <p class="ctx">SOLIDWORKS AI Hackathon on Kaggle</p>
+        <ul>
+          <li>Built a CNN-based system that detects defects in mechanical parts.</li>
+          <li>Used OpenCV and transfer learning for image classification.</li>
+        </ul>
+        <ul class="tags"><li>Python</li><li>CNN</li><li>PyTorch</li><li>OpenCV</li><li>Transfer learning</li></ul>
+        <a class="plink" href="https://github.com/utkarshmathur12/Mechanical-parts-detector" target="_blank" rel="noopener">View on GitHub</a>
+      </article>
+      <article class="proj">
+        <h3>Hey Captain</h3>
+        <p class="ctx">Personal AI voice assistant · Solo project</p>
+        <ul>
+          <li>Built a Python desktop assistant that controls my laptop by voice instead of manual clicks.</li>
+          <li>Converts spoken commands to text, then runs the matching action, such as opening WhatsApp or Spotify.</li>
+          <li>Automates common desktop tasks and replies to the user by voice.</li>
+        </ul>
+        <ul class="tags"><li>Python</li><li>Speech recognition</li><li>Voice response</li><li>Desktop automation</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill"><h3>Languages</h3><p>Python, C, SQL</p></div>
+      <div class="skill"><h3>Backend</h3><p>Django, REST APIs</p></div>
+      <div class="skill"><h3>Databases</h3><p>MySQL, MongoDB</p></div>
+      <div class="skill"><h3>AI / ML</h3><p>CNN, PyTorch, NumPy, Pandas, Generative AI</p></div>
+      <div class="skill"><h3>Tools</h3><p>HTML5, CSS, Google Cloud Platform, Power BI, Firebase</p></div>
+      <div class="skill"><h3>Version control</h3><p>Git, GitHub</p></div>
+      <div class="skill"><h3>Core CS</h3><p>Data structures and algorithms, OOP, DBMS, operating systems</p></div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience &amp; education</h2>
+    <div class="timeline">
+      <div class="item"><h3>Deloitte Australia Technology Job Simulation</h3><p class="when">Forage · June 2025</p><p>Completed a development and coding simulation and wrote a proposal for a dashboard.</p></div>
+      <div class="item"><h3>Tata Data Visualization Job Simulation</h3><p class="when">Forage · February 2025</p><p>Prepared client leadership questions and designed visuals that support executive decisions.</p></div>
+      <div class="item"><h3>B.Tech, Computer Science</h3><p class="when">Poornima University · 2023–2027</p><p>CGPA 8.62/10.</p></div>
+      <div class="item"><h3>Schooling</h3><p class="when">2020–2023</p><p>Class 12 CBSE (70%) at Ambuja Public Sr. Sec. School. Class 10 RBSE (99%) at Nakoda Public Sec. School.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="two">
+      <div>
+        <h2>Certifications</h2>
+        <ul class="plain">
+          <li>Gemini Certified Student<small>Google for Education · 2026</small></li>
+          <li>Google Cloud Career Launchpad, Cloud Engineer Track<small>2026</small></li>
+          <li>AI Agent Builder Camp<small>GeeksforGeeks × Google for Developers</small></li>
+          <li>Google Cloud: Innovating with Artificial Intelligence</li>
+          <li>Google Cloud: The Basics of Google Cloud Compute</li>
+          <li>Oracle Certified Foundations Associate<small>Oracle</small></li>
+          <li>Python Fundamentals for Beginners<small>Great Learning</small></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Achievements</h2>
+        <ul class="plain">
+          <li>Solved 130+ problems on LeetCode and HackerRank<small>3★ Python, 4★ SQL on HackerRank</small></li>
+          <li>Smart India Hackathon 2024<small>Team selected in the top 10 of 30 at the university's internal round</small></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Let's work together</h2>
+    <p class="lede" style="color:inherit;opacity:.85">I'm open to internships and collaborations in backend and AI/ML. The fastest way to reach me is email.</p>
+    <div class="contact">
+      <a class="btn fill" href="mailto:utkarshmathur220@gmail.com">utkarshmathur220@gmail.com</a>
+      <a class="btn ghost" href="tel:+916377685835">+91 63776 85835</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/utkarsh-mathur-8968972a1/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn ghost" href="https://github.com/utkarshmathur12" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <p class="small">Jaipur, Rajasthan, India</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b=document.getElementById('theme'),r=document.documentElement;
+  try{var s=localStorage.getItem('theme');if(s)r.setAttribute('data-theme',s);}catch(e){}
+  b.addEventListener('click',function(){
+    var dark=r.getAttribute('data-theme')==='dark'||(!r.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme: dark)').matches);
+    var n=dark?'light':'dark';r.setAttribute('data-theme',n);
+    try{localStorage.setItem('theme',n);}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
